@@ -6,7 +6,7 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   axios.defaults.withCredentials = true;
-  const backendUrl = "https://demo-proj-server.onrender.com";
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
 
